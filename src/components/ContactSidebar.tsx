@@ -2,9 +2,9 @@ import { MessageCircle, Phone, Mail, Users } from "lucide-react";
 
 const ContactSidebar = () => {
   return (
-    <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-50">
+    <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50">
       {/* Contact Button */}
-      <div className="bg-primary text-white px-4 py-2 text-sm font-medium rotate-90 origin-center mb-4">
+      <div className="bg-primary text-white px-3 py-1 text-xs font-medium rotate-90 origin-center mb-4 whitespace-nowrap">
         CONTACT
       </div>
       
