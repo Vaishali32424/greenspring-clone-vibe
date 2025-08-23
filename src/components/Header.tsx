@@ -20,14 +20,14 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full">
+    <header className="w-full ">
       {/* Top Bar */}
       <div className="bg-header-bg text-white py-2 px-4">
         <div className="container mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4" />
-              <span>1/uploads/18070/ffd1d1d259b4abe984e2a87839e23df.jpg</span>
+              <span>+91 8892381233</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4" />
@@ -71,19 +71,19 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <img src={logo} alt="Green Spring Technology" className="h-12 w-12" />
             <div>
-              <h1 className="text-xl font-bold text-foreground">GREEN SPRING</h1>
+              <h1 className="text-xl font-bold text-foreground">Shree Sai</h1>
               <p className="text-sm text-muted-foreground">TECHNOLOGY</p>
             </div>
           </div>
           
-          <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#" className="text-primary font-medium hover:text-primary-dark transition-colors">Home</a>
+          <nav className="hidden lg:flex items-center space-x-8 text-sm mx-1">
+            <a href="#" className="text-primary font-medium hover:text-primary-dark transition-colors text-sm">Home</a>
             <NavigationDropdown title="Why Choose Us" items={companyDropdownItems} />
             <NavigationDropdown title="Products" items={productsDropdownItems} />
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Sweeteners Customized Solutions</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">News</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Knowledge</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Contact Us</a>
+            <a href="#" className="text-foreground text-sm  hover:text-primary transition-colors ">Sweeteners </a>
+            <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">News</a>
+            <a href="#" className="text-foreground  text-sm hover:text-primary transition-colors">Knowledge</a>
+            <a href="#" className="text-foreground  text-sm hover:text-primary transition-colors">Contact Us</a>
           </nav>
 
           <Button className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md font-medium">

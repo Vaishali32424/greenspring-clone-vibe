@@ -32,7 +32,7 @@ const NavigationDropdown = ({ title, items }: NavigationDropdownProps) => {
               <li key={index}>
                 <a 
                   href={item.href}
-                  className="block px-4 py-3 text-foreground hover:bg-accent hover:text-primary transition-colors text-sm"
+                  className="block px-4 py-3 text-foreground  hover:text-primary transition-colors text-sm"
                 >
                   {item.label}
                 </a>
