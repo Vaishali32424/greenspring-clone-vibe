@@ -1,8 +1,24 @@
 import { Phone, Mail, Globe, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
+import NavigationDropdown from "./NavigationDropdown";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
+  const companyDropdownItems = [
+    { label: "Factory & Certificates", href: "/factory-certificates" },
+    { label: "Meet Our Team", href: "/meet-our-team" },
+    { label: "What Can We Do", href: "/what-can-we-do" },
+    { label: "Innovation And Service", href: "/innovation-service" },
+    { label: "Quality And R&D", href: "/quality-rd" },
+  ];
+
+  const productsDropdownItems = [
+    { label: "Botanical Extracts", href: "/products/botanical-extracts" },
+    { label: "Natural Sweeteners", href: "/products/sweeteners" },
+    { label: "Functional Ingredients", href: "/products/functional-ingredients" },
+    { label: "Custom Solutions", href: "/products/custom-solutions" },
+  ];
+
   return (
     <header className="w-full">
       {/* Top Bar */}
@@ -62,8 +78,8 @@ const Header = () => {
           
           <nav className="hidden lg:flex items-center space-x-8">
             <a href="#" className="text-primary font-medium hover:text-primary-dark transition-colors">Home</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Why Choose Us</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Products</a>
+            <NavigationDropdown title="Why Choose Us" items={companyDropdownItems} />
+            <NavigationDropdown title="Products" items={productsDropdownItems} />
             <a href="#" className="text-foreground hover:text-primary transition-colors">Sweeteners Customized Solutions</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">News</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">Knowledge</a>
