@@ -29,7 +29,7 @@ const NavigationDropdown = ({ title, items }: NavigationDropdownProps) => {
         <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-lg border border-border min-w-[220px] z-50">
           <ul className="py-2">
             {items.map((item, index) => (
-              <li key={index}>
+              <li key={index} className="hover:bg-slate-100">
                 <a 
                   href={item.href}
                   className="block px-4 py-3 text-foreground  hover:text-primary transition-colors text-sm"
