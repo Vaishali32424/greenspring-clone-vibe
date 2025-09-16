@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import ContactSidebar from "@/components/ContactSidebar";
-import { ProductCarousel } from "@/components/ProductCarousel";
-import AboutSection from "@/components/AboutSection";
-import HotProducts from "@/components/HotProducts";
-import HomeContact from "@/components/HomeContact";
-import ProductMarketSection from "@/components/ProductMarketSection";
-import LatestCaseSection from "@/components/LatestCaseSection";
-import LatestNews from "@/components/LatestNews";
+import HeroSection from "@/components/LandingPage/HeroSection";
+import ContactSidebar from "@/components/LandingPage/ContactSidebar";
+import { ProductCarousel } from "@/components/LandingPage/ProductCarousel";
+import AboutSection from "@/components/LandingPage/AboutSection";
+import HotProducts from "@/components/LandingPage/HotProducts";
+import HomeContact from "@/components/LandingPage/HomeContact";
+import ProductMarketSection from "@/components/LandingPage/ProductMarketSection";
+import LatestCaseSection from "@/components/LandingPage/LatestCaseSection";
+import LatestNews from "@/components/LandingPage/LatestNews";
 import Footer from "@/components/Footer";
 
 const Index = () => {

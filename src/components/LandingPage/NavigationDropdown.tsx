@@ -9,9 +9,10 @@ interface DropdownItem {
 interface NavigationDropdownProps {
   title: string;
   items: DropdownItem[];
+  route: string;
 }
 
-const NavigationDropdown = ({ title, items }: NavigationDropdownProps) => {
+const NavigationDropdown = ({ title, items, route }: NavigationDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,7 +22,7 @@ const NavigationDropdown = ({ title, items }: NavigationDropdownProps) => {
       onMouseLeave={() => setIsOpen(false)}
     >
       <button className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2">
-        <span>{title}</span>
+        <a href={route}>{title}</a>
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       

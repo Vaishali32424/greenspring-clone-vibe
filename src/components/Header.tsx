@@ -1,11 +1,11 @@
 import { Phone, Mail, Globe, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
-import NavigationDropdown from "./NavigationDropdown";
+import NavigationDropdown from "./LandingPage/NavigationDropdown";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   const companyDropdownItems = [
-    { label: "Factory & Certificates", href: "/factory-certificates" },
+    { label: "Factory & Certificates", href: "/factory-and-certificate" },
     { label: "Meet Our Team", href: "/meet-our-team" },
     { label: "What Can We Do", href: "/what-can-we-do" },
     { label: "Innovation And Service", href: "/innovation-service" },
@@ -13,10 +13,10 @@ const Header = () => {
   ];
 
   const productsDropdownItems = [
-    { label: "Botanical Extracts", href: "/products/botanical-extracts" },
-    { label: "Natural Sweeteners", href: "/products/sweeteners" },
-    { label: "Functional Ingredients", href: "/products/functional-ingredients" },
-    { label: "Custom Solutions", href: "/products/custom-solutions" },
+    { label: "Botanical Extracts", href: "/botanical-extracts" },
+    { label: "Natural Sweeteners", href: "/sweeteners" },
+    { label: "Functional Ingredients", href: "/functional-ingredients" },
+    { label: "Custom Solutions", href: "/custom-solutions" },
   ];
 
   return (
@@ -77,13 +77,13 @@ const Header = () => {
           </div>
           
           <nav className="hidden lg:flex items-center space-x-8 text-sm mx-1">
-            <a href="#" className="text-primary font-medium hover:text-primary-dark transition-colors text-sm">Home</a>
-            <NavigationDropdown title="Why Choose Us" items={companyDropdownItems} />
-            <NavigationDropdown title="Products" items={productsDropdownItems} />
+            <a href="/" className="text-primary font-medium hover:text-primary-dark transition-colors text-sm">Home</a>
+            <NavigationDropdown route="/why-choose-us" title="Why Choose Us" items={companyDropdownItems} />
+            <NavigationDropdown route="/products"  title="Products" items={productsDropdownItems} />
             <a href="#" className="text-foreground text-sm  hover:text-primary transition-colors ">Sweeteners </a>
             <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">News</a>
             <a href="#" className="text-foreground  text-sm hover:text-primary transition-colors">Knowledge</a>
-            <a href="#" className="text-foreground  text-sm hover:text-primary transition-colors">Contact Us</a>
+            <a href="/contact-us" className="text-foreground  text-sm hover:text-primary transition-colors">Contact Us</a>
           </nav>
 
           <Button className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md font-medium">

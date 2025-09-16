@@ -5,6 +5,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs/WhyChooseUs";
+import FactoryNCertificate from "./components/WhyChooseUs/Factory&certificates/FactoryNCertificate";
+import OurTeam from "./components/WhyChooseUs/OurTeam";
+import InovationNService from "./components/WhyChooseUs/Innovation&Service/InovationNService";
+import QualityNRnD from "./components/WhyChooseUs/QualityNRnd/QualityNRnD";
+import WhatWeCanDo from "./components/WhyChooseUs/WhatCanWeDo/WhatWeCanDo";
+import ContactUs from "./components/ContactUs/ContactUs";
+import Products from "./components/Products/Products";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +24,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/why-choose-us" element={<WhyChooseUs />} />
+          <Route
+            path="/factory-and-certificate"
+            element={<FactoryNCertificate />}
+          />
+          <Route path="/meet-our-team" element={<OurTeam />} />
+          <Route path="/what-can-we-do" element={<WhatWeCanDo />} />
+          <Route path="/innovation-service" element={<InovationNService />} />
+          <Route path="/quality-rd" element={<QualityNRnD />} />
+                    <Route path="/contact-us" element={<ContactUs />} />
+                    <Route path="/products" element={<Products />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
