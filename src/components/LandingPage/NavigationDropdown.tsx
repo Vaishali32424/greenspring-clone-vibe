@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
 interface DropdownItem {
@@ -14,26 +14,43 @@ interface NavigationDropdownProps {
 
 const NavigationDropdown = ({ title, items, route }: NavigationDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen size
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   return (
-    <div 
-      className="relative"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+    <div
+      className={`relative ${isMobile ? "w-full" : ""}`}
+      onMouseEnter={!isMobile ? () => setIsOpen(true) : undefined}
+      onMouseLeave={!isMobile ? () => setIsOpen(false) : undefined}
     >
-      <button className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2">
-        <a href={route}>{title}</a>
-        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+      <button
+        className="flex items-center justify-between w-full text-foreground hover:text-primary transition-colors py-2"
+        onClick={isMobile ? () => setIsOpen(!isOpen) : undefined}
+      >
+        <a href={route}>{title}</a> {" "}
+        <ChevronDown
+          className={`w-4 h-4 ml-2 transition-transform ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
       </button>
-      
-      {isOpen && (
+
+      {/* Desktop (absolute dropdown) */}
+      {!isMobile && isOpen && (
         <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-lg border border-border min-w-[220px] z-50">
           <ul className="py-2">
             {items.map((item, index) => (
               <li key={index} className="hover:bg-slate-100">
-                <a 
+                <a
                   href={item.href}
-                  className="block px-4 py-3 text-foreground  hover:text-primary transition-colors text-sm"
+                  className="block px-4 py-3 text-foreground hover:text-primary transition-colors text-sm"
                 >
                   {item.label}
                 </a>
@@ -41,6 +58,22 @@ const NavigationDropdown = ({ title, items, route }: NavigationDropdownProps) =>
             ))}
           </ul>
         </div>
+      )}
+
+      {/* Mobile (expand under title) */}
+      {isMobile && isOpen && (
+        <ul className="pl-4 border-l border-slate-200">
+          {items.map((item, index) => (
+            <li key={index}>
+              <a
+                href={item.href}
+                className="block py-2 text-sm text-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );

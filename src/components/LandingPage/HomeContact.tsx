@@ -68,7 +68,7 @@ const HomeContact = () => {
 
           {/* Contact button */}
           <a
-            href="https://www.greenspringshop.com/contact-us"
+            href="/contact-us"
             className="bg-green-600 text-white px-6 py-2 rounded-md font-medium w-fit hover:bg-green-700 transition mb-6"
           >
             Contact us

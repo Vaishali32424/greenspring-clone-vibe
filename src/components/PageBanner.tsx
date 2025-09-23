@@ -13,7 +13,7 @@ const PageBanner: React.FC<BannerProps> = ({
   backgroundImage = "/default-banner.jpg",
 }) => {
   return (
-    <div className="w-full">
+    <div className="w-full mt-[120px]">
       {/* Background Image Strip */}
       <div
         className="w-full h-[300px] bg-cover bg-center"

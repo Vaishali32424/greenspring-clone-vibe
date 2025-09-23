@@ -13,7 +13,7 @@ const Products = () => {
         breadcrumb={"Products"}
         backgroundImage="https://www.greenspringshop.com/uploads/201818070/ImgScroll/ba201809191706523221844.jpg?size=2000x362"
       />
-      <section className='px-20 mt-10'>
+      <section className='px-20 pt-[110px]'>
 
 </section>
       <Footer />

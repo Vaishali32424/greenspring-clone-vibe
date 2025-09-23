@@ -1,0 +1,26 @@
+{
+  "language": "Language",
+  "feedback": "Feedback",
+  "home": "Home",
+  "why_choose_us": "Why Choose Us",
+  "products": "Products",
+  "sweeteners": "Sweeteners",
+  "news": "News",
+  "knowledge": "Knowledge",
+  "contact_us": "Contact Us",
+  "phone": "+91 8892381233",
+  "email": "sale@greenspringbio.com",
+  "company_dropdown": {
+    "factory_certificates": "Factory & Certificates",
+    "meet_our_team": "Meet Our Team",
+    "what_can_we_do": "What Can We Do",
+    "innovation_service": "Innovation And Service",
+    "quality_rd": "Quality And R&D"
+  },
+  "products_dropdown": {
+    "botanical_extracts": "Botanical Extracts",
+    "natural_sweeteners": "Natural Sweeteners",
+    "functional_ingredients": "Functional Ingredients",
+    "custom_solutions": "Custom Solutions"
+  }
+}

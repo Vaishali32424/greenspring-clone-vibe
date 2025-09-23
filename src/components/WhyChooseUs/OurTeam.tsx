@@ -35,7 +35,7 @@ const OurTeam = () => {
         breadcrumb={"Why Choose Us / Meet Our Team"}
         backgroundImage="https://www.greenspringshop.com/uploads/202318070/ImgScroll/ba202302141100313844589.jpg?size=1920x300"
       />
-    <section className="py-12 bg-gray-50">
+    <section className="pb-12 bg-gray-50 ">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <h3 className="text-sm font-semibold text-center text-gray-700 uppercase tracking-widest">
