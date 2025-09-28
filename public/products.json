@@ -1,0 +1,56 @@
+{
+  "Chinese Herbal Extracts": [
+    {
+      "id": "quercetin-extract-powder-95",
+      "name": "Quercetin Extract Powder 95%",
+      "image": "https://images.unsplash.com/photo-1622206151228-5a67f9f7a9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "TableDescription": "<table class=\"tbl tble1\"><tbody><tr><td class=\"fw6\">Packaging Size</td><td>1 kg</td></tr><tr><td class=\"fw6\">Packaging Type</td><td>drum</td></tr><tr><td class=\"fw6\">Brand</td><td>shree sai biotech</td></tr><tr><td class=\"fw6\">Organic Type</td><td>Non Organic</td></tr><tr><td class=\"fw6\">Form</td><td>powder</td></tr></tbody></table>",
+      "ParagraphDescription": "<p class=\"fs14 m_moq\"><span class=\"fw6\">Minimum order quantity: </span><span>25 Kg</span></p>",
+      "divDescription": "<div class=\"mt10 fs14 lh1-7 pr tbl_dn cat_desc1\">Quercetin belongs to a group of plant pigments called flavonoids that give many fruits, flowers, and vegetables their colors. Flavonoids, such as quercetin, are antioxidants. They scavenge particles in the body known as free radicals which damage cell membranes, tamper with DNA, and even cause cell death.Quercetin, a plant pigment is a potent antioxidant flavonoid and more specifically a flavonol, found mostly in onions, grapes, berries, cherries, broccoli, and citrus fruits. It is a versatile antioxidant known to possess protective abilities against tissue injury induced by various drug toxicities.</div>"
+    },
+    {
+      "id": "berberine-extract-97",
+      "name": "Berberine Extract 97%",
+      "image": "https://images.unsplash.com/photo-1622206150843-74a53ce38af3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "TableDescription": "<table class=\"tbl tble1\"><tbody><tr><td class=\"fw6\">Packaging Size</td><td>500 g</td></tr><tr><td class=\"fw6\">Packaging Type</td><td>jar</td></tr><tr><td class=\"fw6\">Brand</td><td>green spring</td></tr><tr><td class=\"fw6\">Organic Type</td><td>Organic</td></tr><tr><td class=\"fw6\">Form</td><td>powder</td></tr></tbody></table>",
+      "ParagraphDescription": "<p class=\"fs14 m_moq\"><span class=\"fw6\">Minimum order quantity: </span><span>10 Kg</span></p>",
+      "divDescription": "<div class=\"mt10 fs14 lh1-7 pr tbl_dn cat_desc1\">Berberine is an alkaloid extracted from various plants such as goldenseal and barberry. It has been used in traditional Chinese medicine for its antimicrobial and anti-inflammatory properties.</div>"
+    }
+  ],
+  "Fruit Extracts": [
+    {
+      "id": "mango-extract-powder",
+      "name": "Mango Extract Powder",
+      "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "TableDescription": "<table class=\"tbl tble1\"><tbody><tr><td class=\"fw6\">Packaging Size</td><td>2 kg</td></tr><tr><td class=\"fw6\">Packaging Type</td><td>poly bag</td></tr><tr><td class=\"fw6\">Brand</td><td>fresh herbs</td></tr><tr><td class=\"fw6\">Organic Type</td><td>Organic</td></tr><tr><td class=\"fw6\">Form</td><td>powder</td></tr></tbody></table>",
+      "ParagraphDescription": "<p class=\"fs14 m_moq\"><span class=\"fw6\">Minimum order quantity: </span><span>20 Kg</span></p>",
+      "divDescription": "<div class=\"mt10 fs14 lh1-7 pr tbl_dn cat_desc1\">Mango extract powder is rich in vitamins A, C, and E, and contains antioxidants. It is often used in food, beverages, and cosmetic products.</div>"
+    },
+    {
+      "id": "blueberry-extract-20",
+      "name": "Blueberry Extract 20:1",
+      "image": "https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "TableDescription": "<table class=\"tbl tble1\"><tbody><tr><td class=\"fw6\">Packaging Size</td><td>1 kg</td></tr><tr><td class=\"fw6\">Packaging Type</td><td>drum</td></tr><tr><td class=\"fw6\">Brand</td><td>nature plus</td></tr><tr><td class=\"fw6\">Organic Type</td><td>Non Organic</td></tr><tr><td class=\"fw6\">Form</td><td>powder</td></tr></tbody></table>",
+      "ParagraphDescription": "<p class=\"fs14 m_moq\"><span class=\"fw6\">Minimum order quantity: </span><span>15 Kg</span></p>",
+      "divDescription": "<div class=\"mt10 fs14 lh1-7 pr tbl_dn cat_desc1\">Blueberry extract is known for its high antioxidant content, particularly anthocyanins, which support cardiovascular and cognitive health.</div>"
+    }
+  ],
+  "Botanical Extracts": [
+    {
+      "id": "ashwagandha-extract-10",
+      "name": "Ashwagandha Extract 10:1",
+      "image": "https://images.unsplash.com/photo-1622206160551-5b9aef12640e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "TableDescription": "<table class=\"tbl tble1\"><tbody><tr><td class=\"fw6\">Packaging Size</td><td>25 kg</td></tr><tr><td class=\"fw6\">Packaging Type</td><td>drum</td></tr><tr><td class=\"fw6\">Brand</td><td>vedic herbs</td></tr><tr><td class=\"fw6\">Organic Type</td><td>Organic</td></tr><tr><td class=\"fw6\">Form</td><td>powder</td></tr></tbody></table>",
+      "ParagraphDescription": "<p class=\"fs14 m_moq\"><span class=\"fw6\">Minimum order quantity: </span><span>50 Kg</span></p>",
+      "divDescription": "<div class=\"mt10 fs14 lh1-7 pr tbl_dn cat_desc1\">Ashwagandha is an adaptogen widely used in Ayurvedic medicine to support stress relief, energy, and overall vitality.</div>"
+    },
+    {
+      "id": "turmeric-extract-95",
+      "name": "Turmeric Extract 95% Curcumin",
+      "image": "https://images.unsplash.com/photo-1601004890605-0e21a95f0e4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "TableDescription": "<table class=\"tbl tble1\"><tbody><tr><td class=\"fw6\">Packaging Size</td><td>5 kg</td></tr><tr><td class=\"fw6\">Packaging Type</td><td>drum</td></tr><tr><td class=\"fw6\">Brand</td><td>herb care</td></tr><tr><td class=\"fw6\">Organic Type</td><td>Non Organic</td></tr><tr><td class=\"fw6\">Form</td><td>powder</td></tr></tbody></table>",
+      "ParagraphDescription": "<p class=\"fs14 m_moq\"><span class=\"fw6\">Minimum order quantity: </span><span>25 Kg</span></p>",
+      "divDescription": "<div class=\"mt10 fs14 lh1-7 pr tbl_dn cat_desc1\">Turmeric extract is standardized to 95% curcumin, known for its strong anti-inflammatory and antioxidant properties.</div>"
+    }
+  ]
+}
