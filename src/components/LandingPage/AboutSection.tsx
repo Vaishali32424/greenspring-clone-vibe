@@ -39,10 +39,10 @@ export default function AboutSection() {
         {/* Right Side - Content */}
         <div>
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Xi&apos;an Green Spring Technology Co.,Ltd.
+            Shree Sai Biotech
           </h2>
           <p className="text-gray-600 mb-6">
-            GREEN SPRING® offer a range of botanical extract products with
+Shree sai Biotech® offer a range of botanical extract products with
             proven health benefits to meet the demands of our customers in the
             food, cosmetic, healthcare and natural color industries.
           </p>
@@ -65,7 +65,7 @@ export default function AboutSection() {
 
           {/* Button */}
           <button className="bg-green-700 text-white font-medium px-6 py-2 rounded-md shadow hover:bg-green-800 transition">
-            read more
+            Read more
           </button>
         </div>
       </div>

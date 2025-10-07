@@ -10,7 +10,7 @@ const slides = [
     description: (
       <>
         <p className="mb-4">
-          <strong>GREEN SPRING</strong> is a leading manufacturer and supplier
+          <strong>Shree sai Bio tech</strong> is a leading manufacturer and supplier
         </p>
         <p>
           of high-quality botanical extracts for<br />

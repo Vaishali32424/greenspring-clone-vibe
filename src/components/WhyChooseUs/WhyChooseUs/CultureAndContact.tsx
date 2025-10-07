@@ -29,22 +29,22 @@ const CultureAndContact = ({ showCards = false,  }) => {
     {
       icon: <Mail size={28} />,
       title: "Write to us",
-      desc: "Our email address: sale@greenspringbiocom",
+      desc: "Our email address: info@shreesaibiotech.in",
     },
     {
       icon: <MapPin size={28} />,
       title: "Visiting us",
-      desc: "Room 604, Suit A, National Digital Publishing House Base, Tiangu 7th Road, High-tech development Zone, Xi'an China.",
+      desc: "2nd Floor, Ms-A, Shop A 212, VIP Marg, Mall Godown Road, New Siyaganj, Indore - 452007, Madhya Pradesh, India.",
     },
     {
       icon: <MessageCircle size={28} />,
       title: "Whatsapp",
-      desc: "Our Whatsapp Number: +86-18182698650",
+      desc: "Our Whatsapp Number: +91-8989496905",
     },
     {
       icon: <Phone size={28} />,
       title: "Contact directly",
-      desc: "Our Office Phone: +86-29-88313578",
+      desc: "Our Office Phone: +91-8989496905",
     },
   ];
 

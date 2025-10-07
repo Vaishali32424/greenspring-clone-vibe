@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaRobot } from "react-icons/fa";
-import { Mail, MessageCircle, Send, User, Users } from "lucide-react";
+import { FaRobot, FaWhatsapp } from "react-icons/fa";
+import { Locate, Mail, MessageCircle, Send, User, Users } from "lucide-react";
 
 const ContactSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +37,7 @@ const ContactSidebar = () => {
         {
           id: Date.now(),
           sender: "bot",
-          text: "Hello, welcome to the Greenspring website. If you are interested in any product, please let us know immediately!",
+          text: "Hello, welcome to the Shree sai Bio tech website. If you are interested in any product, please let us know immediately!",
           time,
         },
         {
@@ -57,10 +57,10 @@ const ContactSidebar = () => {
   sender: "bot",
   text: `📞 You can contact us via the following methods:
 
-• Phone: [Not provided]  
-• Email: [Not provided]  
-• WhatsApp: 8618182698650  
-• Address: Room 604, Suit A, National Digital Publishing House Base, Tiangu 7th Road, High-tech Development Zone, Xi’an China  
+• Phone: +91-8989496905
+• Email: info@shreesaibiotech.in
+• WhatsApp: +91-8989496905
+• Address: 2nd Floor, Ms-A, Shop A 212, VIP Marg, Mall Godown Road, New Siyaganj, Indore - 452007, Madhya Pradesh, India
 
 If you have any specific inquiries, feel free to reach out!`,
   time,
@@ -125,16 +125,19 @@ If you have any specific inquiries, feel free to reach out!`,
   if (lower.includes("contact")) {
     return `📞 You can contact us via the following methods:
 
-• Phone: [Not provided]  
-• Email: [Not provided]  
-• WhatsApp: 8618182698650  
-• Address: Room 604, Suit A, National Digital Publishing House Base, Tiangu 7th Road, High-tech Development Zone, Xi’an China  
+• Phone: +91-8989496905
+• Email: info@shreesaibiotech.in
+• WhatsApp: +91-8989496905
+• Address: 2nd Floor, Ms-A, Shop A 212, VIP Marg, Mall Godown Road, New Siyaganj, Indore - 452007, Madhya Pradesh, India
 
 If you have any specific inquiries, feel free to reach out!`;
   }
 
   return "I'm here to help! Could you please rephrase that?";
 };
+  const phoneNumber = "+918989496905";
+  const email = "info@shreesaibiotech.in";
+  const address = "2nd Floor, Ms-A, Shop A 212, VIP Marg, Mall Godown Road, New Siyaganj, Indore - 452007, Madhya Pradesh, India";
 
   return (
     <>
@@ -155,27 +158,44 @@ If you have any specific inquiries, feel free to reach out!`;
         </a>
 
         {/* Contact Icons */}
-        <div className="flex flex-col space-y-3 mt-1 bg-white shadow-lg rounded-l-lg p-3">
-          <button className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white p-3 rounded-full">
-            <MessageCircle className="w-5 h-5" />
-          </button>
-          <div className="text-xs text-center">Whatsapp</div>
+         <div className="flex flex-col space-y-3 mt-1 bg-white shadow-lg rounded-l-lg p-3">
+      {/* WhatsApp */}
+      <button
+        onClick={() => window.open(`https://wa.me/${phoneNumber.replace(/\D/g,'')}`, "_blank")}
+        className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white p-3 rounded-full"
+      >
+        <FaWhatsapp className="w-5 h-5" />
+      </button>
+      <div className="text-xs text-center">Whatsapp</div>
 
-          <button className="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full">
-            <Mail className="w-5 h-5" />
-          </button>
-          <div className="text-xs text-center">Email</div>
+      {/* Email */}
+      <button
+        onClick={() => window.location.href = `mailto:${email}`}
+        className="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full"
+      >
+        <Mail className="w-5 h-5" />
+      </button>
+      <div className="text-xs text-center">Email</div>
 
-          <button className="flex items-center justify-center bg-green-600 hover:bg-green-700 text-white p-3 rounded-full">
-            <MessageCircle className="w-5 h-5" />
-          </button>
-          <div className="text-xs text-center">Wechat</div>
+      {/* WeChat (placeholder: open chat link or alert) */}
+     <button
+  onClick={() => window.location.href = "sms:+918989496905"}
+  className="flex items-center justify-center bg-green-600 hover:bg-green-700 text-white p-3 rounded-full"
+>
+  <MessageCircle className="w-5 h-5" />
+</button>
+<div className="text-xs text-center">Message</div>
 
-          <button className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full">
-            <Users className="w-5 h-5" />
-          </button>
-          <div className="text-xs text-center">Teams</div>
-        </div>
+
+      {/* Location */}
+      <button
+        onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`, "_blank")}
+        className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full"
+      >
+        <Locate className="w-5 h-5" />
+      </button>
+      <div className="text-xs text-center">Location</div>
+    </div>
       </div>
 
       {/* Chat box + FAB at bottom right */}
@@ -185,7 +205,7 @@ If you have any specific inquiries, feel free to reach out!`;
           <div className="w-[500px] h-[600px] bg-white shadow-2xl rounded-lg flex flex-col border border-gray-200">
             {/* Header */}
             <div className="bg-green-700 text-white px-4 py-3 flex justify-between items-center rounded-t-lg">
-              <div className="font-semibold">GREEN SPRING</div>
+              <div className="font-semibold">SHREE SAI BIOTECH</div>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-xl font-bold text-white hover:text-black"

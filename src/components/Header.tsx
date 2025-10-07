@@ -1,6 +1,6 @@
 import { Phone, Mail, ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.jpeg";
 import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
@@ -123,15 +123,12 @@ const Header = () => {
       </div>
 
       {/* ✅ Navigation Bar */}
-      <div className="bg-nav-bg shadow-md py-4 px-4">
+      <div className="bg-nav-bg shadow-md py-2 px-4">
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img src={logo} alt="Green Spring Technology" className="h-12 w-12" />
-            <div>
-              <h1 className="text-xl font-bold text-foreground">Shree Sai</h1>
-              <p className="text-sm text-muted-foreground">TECHNOLOGY</p>
-            </div>
+            <img src={logo} alt="Shree Sai Biotech" className="h-16 w-auto" />
+          
           </div>
 
           {/* Desktop Nav */}

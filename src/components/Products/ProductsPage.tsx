@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 
 // Define the structure of a product based on your products.json
 interface Product {
+  MoreDescriptionText: string;
+  MoreDescriptionHTML: string;
   id: string;
   name: string;
   TableDescription: string;
@@ -120,7 +122,7 @@ const ProductsPage = () => {
               <h1 className="text-3xl font-bold mb-6 sticky top-20 bg-white py-2 z-10">
                 {category}
               </h1>
-        <div className="space-y-8">
+    <div className="space-y-8">
   {productData[category].map((product) => (
     <div
       key={product.id}
@@ -128,36 +130,56 @@ const ProductsPage = () => {
       className="bg-white rounded-lg shadow-md overflow-hidden p-6"
     >
       <div className="flex flex-col md:flex-row gap-6">
+        {/* Product Image */}
         <img
           src={product.image || "https://via.placeholder.com/400x300.png?text=Product+Image"}
           alt={product.name}
           className="w-full md:w-1/3 h-80 object-cover rounded-lg"
         />
+        
+        {/* Product Details */}
         <div className="w-full md:w-2/3">
           <h3 className="text-2xl font-bold mb-4">{product.name}</h3>
+          
           <div className="prose max-w-none">
-            <div
-              className="my-2"
-              dangerouslySetInnerHTML={{ __html: product.TableDescription }}
-            />
-            <div
-              className="my-2"
-              dangerouslySetInnerHTML={{ __html: product.ParagraphDescription }}
-            />
-            <div
-              className="my-2"
-              dangerouslySetInnerHTML={{ __html: product.divDescription }}
-            />
+            {/* Table Description */}
+            {/* {product.TableDescription && (
+              <div
+                className="my-2"
+                dangerouslySetInnerHTML={{ __html: product.TableDescription }}
+              />
+            )} */}
+
+            {/* Paragraph Description */}
+            {/* {product.ParagraphDescription && (
+              <p className="my-2">{product.ParagraphDescription}</p>
+            )} */}
+
+            {/* More Description HTML */}
+            {product.MoreDescriptionHTML && (
+              <div
+                className="my-2"
+                dangerouslySetInnerHTML={{ __html: product.MoreDescriptionHTML }}
+              />
+            )}
+            {/* More Description Text */}
+{/* {product.MoreDescriptionText && (
+  <div className="my-2 text-sm text-gray-700">
+    {product.MoreDescriptionText}
+  </div>
+)} */}
+
           </div>
         </div>
       </div>
+
       {/* Buy Now Button */}
-      <div className="mt-6 ">
+      <div className="mt-6">
         <a
-          href={`https://wa.me/+91YOUR_PHONE_NUMBER?text=I%20want%20to%20buy%20${encodeURIComponent(product.name)}`} // Replace +91YOUR_PHONE_NUMBER with actual WhatsApp number (e.g., +919876543210)
+          href={`https://wa.me/+918989496905?text=I%20want%20to%20buy%20${encodeURIComponent(product.name)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-primary hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg transition-colors"
+          className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-lg transition-colors"
         >
           Buy Now
         </a>
@@ -165,6 +187,7 @@ const ProductsPage = () => {
     </div>
   ))}
 </div>
+
 
             </div>
           ))}

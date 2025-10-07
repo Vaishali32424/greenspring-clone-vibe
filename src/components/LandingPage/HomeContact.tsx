@@ -50,8 +50,8 @@ const HomeContact = () => {
 
           {/* Email */}
           <p className="text-lg md:text-xl font-semibold text-green-700 mb-4">
-            <a href="mailto:sale@greenspringbio.com">
-              sale@greenspringbio.com
+            <a href="mailto:info@shreesaibiotech.in">
+              info@shreesaibiotech.in
             </a>
           </p>
 
