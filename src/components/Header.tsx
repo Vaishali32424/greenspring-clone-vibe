@@ -11,6 +11,7 @@ import {
 import NavigationDropdown from "./LandingPage/NavigationDropdown";
 import ReactCountryFlag from "react-country-flag";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const languages = [
   { code: "en", name: "English", countryCode: "GB" },
@@ -29,6 +30,7 @@ const languages = [
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -136,7 +138,7 @@ const Header = () => {
             <a href="/" className="text-primary font-medium hover:text-primary-dark transition-colors text-sm">{t("home")}</a>
             <NavigationDropdown title={t("why_choose_us")} items={companyDropdownItems} route="/why-choose-us" />
             <NavigationDropdown title={t("products")} items={productsDropdownItems} route={"/products"} />
-            <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">{t("sweeteners")}</a>
+            <a href="/sweeteners" className="text-foreground text-sm hover:text-primary transition-colors">{t("Sweeteners Customized Solutions")}</a>
             <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">{t("news")}</a>
             <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">{t("knowledge")}</a>
             <a href="/contact-us" className="text-foreground text-sm hover:text-primary transition-colors">{t("contact_us")}</a>
@@ -144,7 +146,8 @@ const Header = () => {
 
           {/* Desktop Feedback Button */}
           <div className="hidden lg:block">
-            <Button className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md font-medium">
+            <Button       onClick={() => navigate("/contact-us")}
+className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md font-medium">
               {t("feedback")}
             </Button>
           </div>

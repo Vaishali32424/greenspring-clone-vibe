@@ -4,10 +4,7 @@ const OurFactory = () => {
     "https://www.greenspringshop.com/Content/uploads/2021389378/20210520090157d55f282d68044b27bd0b703d071a585e.jpg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtu-c6Zre4h_aCPyj0qCEI_ZhTOTyM9ZWJMQ&s",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3EJVhQY8K69hbLV8ZZKDvK9_UexPCKNGFpA&s",
-    "/images/factory5.jpg",
-    "/images/factory6.jpg",
-    "/images/factory7.jpg",
-    "/images/factory8.jpg",
+  
   ];
 
   return (

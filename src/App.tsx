@@ -13,12 +13,14 @@ import QualityNRnD from "./components/WhyChooseUs/QualityNRnd/QualityNRnD";
 import WhatWeCanDo from "./components/WhyChooseUs/WhatCanWeDo/WhatWeCanDo";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Products from "./components/Products/Products";
+import Sweetners from "./components/Sweetners/Sweetners";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -35,6 +37,7 @@ const App = () => (
           <Route path="/quality-rd" element={<QualityNRnD />} />
                     <Route path="/contact-us" element={<ContactUs />} />
                     <Route path="/products" element={<Products />} />
+                    <Route path="/sweeteners" element={<Sweetners />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

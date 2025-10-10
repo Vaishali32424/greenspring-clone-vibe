@@ -75,13 +75,12 @@ export default function Footer() {
                 ["Home", "/"],
                 ["Why Choose Us", "/about-us"],
                 ["Products", "/products"],
-                ["Sweeteners Customized Solutions", "/green-spring-sweetener"],
-                ["Product List", "/custom-form"],
+                ["Sweeteners Customized Solutions", "/sweeteners"],
+                ["Product List", "/products"],
                 ["News", "/newslist-1"],
                 ["Knowledge", "/info/"],
                 ["Contact Us", "/contact-us"],
-                ["Feedback", "/inquiry"],
-                ["Sitemap", "/sitemap.xml"],
+                ["Feedback", "/contact-us"],
               ].map(([label, link]) => (
                 <li key={label}>
                   <a href={`${link}`} className="hover:underline">
