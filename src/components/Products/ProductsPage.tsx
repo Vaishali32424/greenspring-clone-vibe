@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import PhoneNumberModal from "./PhoneNumberModal";
 import emailjs from 'emailjs-com';
 import { toast } from "../ui/use-toast";
-// Define the structure of a product based on your products.json
+
 interface Product {
   Description: any;
   MoreDescriptionText: string;
@@ -13,10 +13,9 @@ interface Product {
   TableDescription: string;
   ParagraphDescription: string;
   divDescription: string;
-  image?: string; // optional image field
+  image?: string;
 }
 
-// Define the structure for the entire data object
 interface ProductData {
   [category: string]: Product[];
 }
@@ -25,14 +24,15 @@ const ProductsPage = () => {
   const [productData, setProductData] = useState<ProductData>({});
   const [categories, setCategories] = useState<string[]>([]);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const headerRef = useRef<HTMLElement | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const productRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [unlockedProducts, setUnlockedProducts] = useState<Set<string>>(new Set());
 
-  const productRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const [isUnlockedGlobally, setIsUnlockedGlobally] = useState(false);
 
   const handleReadMore = (product: Product) => {
     setSelectedProduct(product);
@@ -52,33 +52,36 @@ const ProductsPage = () => {
       };
 
       emailjs.send(
-        'service_9f3gre7', 
-        'template_u7w6ecp', 
+        'service_9f3gre7',
+        'template_u7w6ecp',
         templateParams,
-        'gEoEzEVindFqGKHWm' 
+        'gEoEzEVindFqGKHWm'
       )
-      .then((response) => {
-        toast({
-  title: "Unlocked Successfully ✅",
-  description: "Product has been unlocked successfully.",
-});
-
-        console.log('SUCCESS!', response.status, response.text);
-      }, (err) => {
-        console.log('FAILED...', err);
-         toast({
+        .then((response) => {
+          toast({
             title: "Unlocked Successfully ✅",
-  description: "Product has been unlocked successfully.",
+            description: "Product has been unlocked successfully.",
           });
-      });
-
-      setUnlockedProducts(prev => new Set(prev).add(selectedProduct.id));
+          console.log('SUCCESS!', response.status, response.text);
+          setIsUnlockedGlobally(true);
+          localStorage.setItem('isUnlockedGlobally', 'true');
+          handleModalClose();
+        })
+        .catch((err) => {
+          console.log('FAILED...', err);
+          toast({
+            title: "Unlocked Successfully ✅",
+            description: "Product has been unlocked successfully.",
+          });
+          // Still unlock globally in case of fail — optional
+          setIsUnlockedGlobally(true);
+          localStorage.setItem('isUnlockedGlobally', 'true');
+          handleModalClose();
+        });
     }
-    handleModalClose();
   };
 
   useEffect(() => {
-    // header ka ref pakadne ke liye
     headerRef.current = document.querySelector("header");
 
     const fetchProducts = async () => {
@@ -101,6 +104,13 @@ const ProductsPage = () => {
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    const unlocked = localStorage.getItem('isUnlockedGlobally');
+    if (unlocked === 'true') {
+      setIsUnlockedGlobally(true);
+    }
+  }, []);
+
   const handleCategoryToggle = (category: string) => {
     setOpenCategory(openCategory === category ? null : category);
   };
@@ -110,8 +120,7 @@ const ProductsPage = () => {
     if (productElement) {
       const headerHeight = headerRef.current?.offsetHeight || 80;
       const elementPosition = productElement.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerHeight;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
       window.scrollTo({
         top: offsetPosition,
@@ -127,7 +136,7 @@ const ProductsPage = () => {
   return (
     <div className="container mx-auto p-4 lg:p-8">
       <div className="flex flex-col lg:flex-row gap-8">
-        {/* Left Sidebar */}
+        {/* Sidebar */}
         <aside className="w-full lg:w-1/4 lg:sticky lg:top-4 h-fit shadow-xl p-4">
           <h2 className="text-2xl font-bold mb-4">Categories</h2>
           <ul className="space-y-2">
@@ -156,10 +165,9 @@ const ProductsPage = () => {
                         >
                           {product.name && (
                             <div
-                              className=""
                               dangerouslySetInnerHTML={{ __html: product.name }}
                             />
-                          )}{" "}
+                          )}
                         </button>
                       </li>
                     ))}
@@ -190,8 +198,7 @@ const ProductsPage = () => {
                           product.image ||
                           "https://via.placeholder.com/400x300.png?text=Product+Image"
                         }
-  alt={product.name?.replace(/<[^>]+>/g, "")} // removes any HTML tags if present
-
+                        alt={product.name?.replace(/<[^>]+>/g, "")}
                         className="w-full md:w-1/3 h-80 object-cover rounded-lg"
                       />
 
@@ -219,28 +226,29 @@ const ProductsPage = () => {
                                 __html: product.ParagraphDescription,
                               }}
                             />
-                          
                           )}
 
                           {product.Description && (
-                               <div className="relative">
-                               <div
-                                 className={`my-2 ${unlockedProducts.has(product.id) ? '' : 'blur-sm'}`}
-                                 dangerouslySetInnerHTML={{
-                                   __html: product.Description,
-                                 }}
-                               />
-                               {!unlockedProducts.has(product.id) && (
-                                 <div className="absolute inset-0 flex items-center justify-center">
-                                   <button
-                                     onClick={() => handleReadMore(product)}
-                                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                   >
-                                     Read More
-                                   </button>
-                                 </div>
-                               )}
-                             </div>
+                            <div className="relative">
+                              <div
+                                className={`my-2 ${
+                                  isUnlockedGlobally ? '' : 'blur-sm'
+                                }`}
+                                dangerouslySetInnerHTML={{
+                                  __html: product.Description,
+                                }}
+                              />
+                              {!isUnlockedGlobally && (
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                  <button
+                                    onClick={() => handleReadMore(product)}
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                  >
+                                    Read More
+                                  </button>
+                                </div>
+                              )}
+                            </div>
                           )}
                         </div>
                       </div>
@@ -266,7 +274,9 @@ const ProductsPage = () => {
           ))}
         </main>
       </div>
-       {selectedProduct && (
+
+      {/* Phone Modal */}
+      {selectedProduct && (
         <PhoneNumberModal
           isOpen={isModalOpen}
           onClose={handleModalClose}

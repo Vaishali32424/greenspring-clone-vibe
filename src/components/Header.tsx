@@ -136,7 +136,7 @@ const Header = () => {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center space-x-8 text-sm mx-1">
             <a href="/" className="text-primary font-medium hover:text-primary-dark transition-colors text-sm">{t("home")}</a>
-            <NavigationDropdown title={t("why_choose_us")} items={companyDropdownItems} route="/why-choose-us" />
+            <NavigationDropdown title={t("about_us")} items={companyDropdownItems} route="/why-choose-us" />
             <NavigationDropdown title={t("products")} items={productsDropdownItems} route={"/products"} />
             <a href="/sweeteners" className="text-foreground text-sm hover:text-primary transition-colors">{t("Sweeteners Customized Solutions")}</a>
             <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">{t("news")}</a>
@@ -199,7 +199,7 @@ className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md font
     <a href="/" className="block text-primary font-medium">{t("home")}</a>
 
     {/* Dropdowns open on click */}
-    <NavigationDropdown title={t("why_choose_us")} items={companyDropdownItems} route="/why-choose-us" />
+    <NavigationDropdown title={t("about_us")} items={companyDropdownItems} route="/why-choose-us" />
     <NavigationDropdown title={t("products")} items={productsDropdownItems} route={"/products"} />
 
     <a href="#" className="block text-foreground">{t("sweeteners")}</a>

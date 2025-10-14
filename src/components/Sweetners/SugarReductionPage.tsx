@@ -15,7 +15,7 @@ const SugarReductionPage: React.FC = () => {
         {/* Card 1 */}
         <div className="bg-white rounded-lg shadow-sm border p-4">
           <img
-            src="https://images.unsplash.com/photo-1563906909771-7f64b01f1c4e" // Replace with actual image URL
+          src="/assets/plants-and-prowder.webp"
             alt="Biotechnology"
             className="w-full h-48 object-cover rounded-md mb-4"
           />
