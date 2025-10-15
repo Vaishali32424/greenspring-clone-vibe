@@ -1,6 +1,6 @@
 import { Phone, Mail, ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import logo from "@/assets/logo.jpeg";
+import logo from "/assets/logo.jpeg";
 import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import NavigationDropdown from "./LandingPage/NavigationDropdown";
 import ReactCountryFlag from "react-country-flag";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const languages = [
@@ -31,6 +31,31 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
+  const [productsDropdownItems, setProductsDropdownItems] = useState<
+    { label: string; href: string }[]
+  >([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("/products.json");
+        const data = await response.json();
+        const categories = Object.keys(data);
+        const dropdownItems = categories.map((category) => ({
+          label: category,
+          href: `/products#${category
+            .toLowerCase()
+            .replace(/ & /g, "-")
+            .replace(/ /g, "-")}`,
+        }));
+        setProductsDropdownItems(dropdownItems);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -44,12 +69,12 @@ const Header = () => {
     { label: t("company_dropdown.quality_rd"), href: "/quality-rd" },
   ];
 
-  const productsDropdownItems = [
-    { label: t("products_dropdown.botanical_extracts"), href: "/products/botanical-extracts" },
-    { label: t("products_dropdown.natural_sweeteners"), href: "/products/sweeteners" },
-    { label: t("products_dropdown.functional_ingredients"), href: "/products/functional-ingredients" },
-    { label: t("products_dropdown.custom_solutions"), href: "/products/custom-solutions" },
-  ];
+  // const productsDropdownItems = [
+  //   { label: t("products_dropdown.botanical_extracts"), href: "/products/botanical-extracts" },
+  //   { label: t("products_dropdown.natural_sweeteners"), href: "/products/sweeteners" },
+  //   { label: t("products_dropdown.functional_ingredients"), href: "/products/functional-ingredients" },
+  //   { label: t("products_dropdown.custom_solutions"), href: "/products/custom-solutions" },
+  // ];
 
   const selectedLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
 
@@ -137,7 +162,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8 text-sm mx-1">
             <a href="/" className="text-primary font-medium hover:text-primary-dark transition-colors text-sm">{t("home")}</a>
             <NavigationDropdown title={t("about_us")} items={companyDropdownItems} route="/why-choose-us" />
-            <NavigationDropdown title={t("products")} items={productsDropdownItems} route={"/products"} />
+            <NavigationDropdown title={t("products")}  navigateById={true} items={productsDropdownItems} route={"/products"} />
             <a href="/sweeteners" className="text-foreground text-sm hover:text-primary transition-colors">{t("Sweeteners Customized Solutions")}</a>
             <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">{t("news")}</a>
             <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">{t("knowledge")}</a>

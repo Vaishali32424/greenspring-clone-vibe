@@ -129,7 +129,7 @@ const ProductCenter: React.FC = () => {
           </ul>
         </div>
         <img
-          src="src/assets/steviaplant.webp"
+          src="/assets/steviaplant.webp"
           alt="Stevia Plant"
           className="w-full h-auto object-cover rounded"
         />

@@ -1,7 +1,7 @@
 import { FaShieldAlt, FaRegHeart, FaTools, FaStar } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import heroPlant from "@/assets/hero-plant.jpg";
-import secondImage from "@/assets/hero-plant-03.jpg";
+import heroPlant from "/assets/hero-plant.jpg";
+import secondImage from "/assets/hero-plant-03.jpg";
 
 const slides = [
   {

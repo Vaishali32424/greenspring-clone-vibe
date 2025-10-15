@@ -3,7 +3,7 @@ import React from "react";
 const IndustrySolutions: React.FC = () => {
   const cards = [
     {
-      img: "https://images.unsplash.com/photo-1612538498458-e965b46e1f26?auto=format&fit=crop&w=900&q=80", // replace with your actual image
+      img: "assets/beverage.webp",
       title: "Beverage industry",
       points: [
         {
@@ -31,7 +31,7 @@ const IndustrySolutions: React.FC = () => {
       ],
     },
     {
-      img: "https://images.unsplash.com/photo-1608759282077-1c47025c27c5?auto=format&fit=crop&w=900&q=80",
+      img: "assets/seasoning.webp",
       title: "Seasoning and pre made dishes",
       points: [
         {

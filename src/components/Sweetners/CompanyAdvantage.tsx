@@ -17,7 +17,7 @@ const advantages: Advantage[] = [
       "Annual production capacity exceeds 8000 tons, with cooperative customers covering more than 30 sub sectors such as food and beverage, dairy products, and pre made meals",
     ],
     image:
-      "src/assets/scientific01.png",
+      "/assets/scientific01.png",
     // replace with your actual image link
   },
   {
@@ -28,7 +28,7 @@ const advantages: Advantage[] = [
       "Innovative compound natural sweetness synergistic enhancement technology, solving problems such as bitterness and delayed sweetness after using a single natural sweetener",
     ],
     image:
-      "src/assets/scientific02.jpg", // replace with your actual image link
+      "/assets/scientific02.jpg", // replace with your actual image link
   },
 ];
 

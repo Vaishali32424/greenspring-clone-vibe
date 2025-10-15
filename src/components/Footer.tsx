@@ -1,8 +1,8 @@
 import { Globe, ChevronDown } from "lucide-react";
 import React from "react";
 import ContactSidebar from "./LandingPage/ContactSidebar";
-import logo from "@/assets/logo.jpeg";
-import QRCode from "@/assets/QR-code.png";
+import logo from "/assets/logo.jpeg";
+import QRCode from "/assets/QR-code.png";
 export default function Footer() {
   return (
     <><footer className="bg-gray-100 text-gray-700">

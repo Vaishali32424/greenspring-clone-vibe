@@ -28,6 +28,7 @@ const ProductsPage = () => {
 
   const headerRef = useRef<HTMLElement | null>(null);
   const productRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -73,7 +74,6 @@ const ProductsPage = () => {
             title: "Unlocked Successfully ✅",
             description: "Product has been unlocked successfully.",
           });
-          // Still unlock globally in case of fail — optional
           setIsUnlockedGlobally(true);
           localStorage.setItem('isUnlockedGlobally', 'true');
           handleModalClose();
@@ -105,11 +105,37 @@ const ProductsPage = () => {
   }, []);
 
   useEffect(() => {
-    const unlocked = localStorage.getItem('isUnlockedGlobally');
-    if (unlocked === 'true') {
+    const unlocked = localStorage.getItem("isUnlockedGlobally");
+    if (unlocked === "true") {
       setIsUnlockedGlobally(true);
     }
-  }, []);
+
+    const hash = window.location.hash.substring(1);
+    if (hash && categories.length > 0) {
+      const categoryElement = categoryRefs.current[hash];
+      if (categoryElement) {
+        const headerHeight = headerRef.current?.offsetHeight || 80;
+        const elementPosition = categoryElement.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [categories]);
+
+  const getProductImage = (name: string, category: string) => {
+    if (!name) {
+      return "https://via.placeholder.com/400x300.png?text=No+Image";
+    }
+    const cleanName = name.replace(/<\/?[^>]+(>|$)/g, "").trim();
+    // Start by trying the .png extension
+  const imagePath = `/assets/All_product_images/${category}/${encodeURIComponent(cleanName)}.png`; // Assuming .png, adjust if needed
+    return imagePath;
+  };
 
   const handleCategoryToggle = (category: string) => {
     setOpenCategory(openCategory === category ? null : category);
@@ -136,7 +162,6 @@ const ProductsPage = () => {
   return (
     <div className="container mx-auto p-4 lg:p-8">
       <div className="flex flex-col lg:flex-row gap-8">
-        {/* Sidebar */}
         <aside className="w-full lg:w-1/4 lg:sticky lg:top-4 h-fit shadow-xl p-4">
           <h2 className="text-2xl font-bold mb-4">Categories</h2>
           <ul className="space-y-2">
@@ -178,10 +203,20 @@ const ProductsPage = () => {
           </ul>
         </aside>
 
-        {/* Main Content */}
         <main className="w-full lg:w-3/4">
           {categories.map((category) => (
-            <div key={category} className="mb-12">
+            <div
+              key={category}
+              className="mb-12"
+              ref={(el) =>
+                (categoryRefs.current[
+                  category
+                    .toLowerCase()
+                    .replace(/ & /g, "-")
+                    .replace(/ /g, "-")
+                ] = el)
+              }
+            >
               <h1 className="text-3xl font-bold mb-6 sticky top-20 bg-white py-2 z-10">
                 {category}
               </h1>
@@ -194,14 +229,31 @@ const ProductsPage = () => {
                   >
                     <div className="flex flex-col md:flex-row gap-6">
                       <img
-                        src={
-                          product.image ||
-                          "https://via.placeholder.com/400x300.png?text=Product+Image"
-                        }
+                        src={getProductImage(product.name, category)}
                         alt={product.name?.replace(/<[^>]+>/g, "")}
-                        className="w-full md:w-1/3 h-80 object-cover rounded-lg"
+                        loading="lazy"
+                        className="w-full  md:w-1/3 h-80 object-cover rounded-lg"
+                        // **FIX**: Added onError to try different extensions
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          const currentSrc = target.src;
+                          const placeholder = "https://via.placeholder.com/400x300.png?text=No+Image";
+                          
+                          // If .png fails, try .jpg
+                          if (currentSrc.endsWith(".png")) {
+                            target.src = currentSrc.replace(".png", ".jpg");
+                          } 
+                          // If .jpg fails, try .jpeg
+                          else if (currentSrc.endsWith(".jpg")) {
+                            target.src = currentSrc.replace(".jpg", ".jpeg");
+                          } 
+                          // If all fail, use the placeholder
+                          else {
+                            target.onerror = null; // Prevent infinite loops
+                            target.src = placeholder;
+                          }
+                        }}
                       />
-
                       <div className="w-full md:w-2/3">
                         {product.name && (
                           <div
@@ -218,7 +270,6 @@ const ProductsPage = () => {
                               }}
                             />
                           )}
-
                           {product.ParagraphDescription && (
                             <div
                               className="my-2"
@@ -227,7 +278,6 @@ const ProductsPage = () => {
                               }}
                             />
                           )}
-
                           {product.Description && (
                             <div className="relative">
                               <div
@@ -253,13 +303,11 @@ const ProductsPage = () => {
                         </div>
                       </div>
                     </div>
-
-                    {/* Buy Now Button */}
                     <div className="mt-6">
                       <a
-                        href={`https://wa.me/+918989496905?text=I%20want%20to%20buy%20${encodeURIComponent(
-                          product.name
-                        )}`}
+                        href={`https://wa.me/+918989496905?text=I%20want%20to%20buy%20${
+                          encodeURIComponent(product.name.replace(/<[^>]*>/g, '').trim())
+                        }`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-lg transition-colors"
@@ -275,7 +323,6 @@ const ProductsPage = () => {
         </main>
       </div>
 
-      {/* Phone Modal */}
       {selectedProduct && (
         <PhoneNumberModal
           isOpen={isModalOpen}
