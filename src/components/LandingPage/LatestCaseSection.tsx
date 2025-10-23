@@ -7,11 +7,12 @@ import "swiper/css/pagination";
 const cases = [
   {
     title: "Blending Powder",
+        image: "assets/granular.jpeg",
+
     description: `*Customised blending
 *Packed by pouch or tube with custom logo
 *Specifications: 50g, 100g, 200g, 500g, 1000g….
 *Provide packaging customization and specialty label design services such as various packaging (bags or bottles)`,
-    image: "https://assets.weforum.org/article/image/xho4dHMhp3SOSDIXzgtaTPQjnKG96tY_zEwdcrB7elE.jpg",
   },
   {
     title: "Granular",
@@ -19,7 +20,7 @@ const cases = [
 *Custom blend
 *Provide packaging customization and specialty label design services such as various packaging (bags or bottles)
 *Service can be customized according to customer needs`,
-    image: "https://5.imimg.com/data5/XX/NV/MY-2396193/liquid-malt-extract-500x500.png",
+    image: "assets/OEM-service.jpeg",
   },
   {
     title: "Tablet & Effervescent Tablet",
@@ -29,7 +30,7 @@ const cases = [
 *Flavors: Orange, Lemon, Peach, Strawberry, Blueberry, Apple, Grape or your recipe
 *Packing: 4g/tablet or any other weight you want, 10 or 20 pieces/tube , 100 tubes/carton
 *Provide packaging customization and specialty label design services such as various packaging (bags or bottles)`,
-    image: "https://cdn.shopify.com/s/files/1/0240/2942/9840/files/Effervescent_Tablets_480x480.png?v=1665393222",
+    image: "assets/Raw-material.jpeg",
   },
 ];
 
@@ -70,7 +71,7 @@ const LatestCaseSection: React.FC = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-[350px] object-cover transition duration-300 transform group-hover:scale-105"
+                  className="w-full h-[350px] object-fit transition duration-300 transform group-hover:scale-105"
                 />
                 
                 {/* Hover Overlay */}

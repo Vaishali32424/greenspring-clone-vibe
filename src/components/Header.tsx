@@ -1,6 +1,6 @@
 import { Phone, Mail, ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import logo from "/assets/logo.jpeg";
+import logo from "/assets/big-logo.jpeg";
 import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
@@ -124,42 +124,83 @@ const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-               <div className="flex space-x-2">
-              {/* Social Media Icons */}
-              <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                <span className="text-xs">f</span>
-              </div>
-              <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                <span className="text-xs">x</span>
-              </div>
-              <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                <span className="text-xs">in</span>
-              </div>
-              <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                <span className="text-xs">yt</span>
-              </div>
-              <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                <span className="text-xs">p</span>
-              </div>
-              <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                <span className="text-xs">vk</span>
-              </div>
-            </div>
+          <div className="flex space-x-2">
+  {/* Facebook */}
+  <a
+    href="https://www.facebook.com/profile.php?id=61550521295046"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">f</span>
+  </a>
+
+   <a
+    href="https://x.com/Sbiotech2?t=A9HPgMjIGBbTtZpNCy3e1w&s=09"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">x</span>
+  </a>
+
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/in/shree-sai-biotech-bb7305205?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">in</span>
+  </a>
+
+  {/* YouTube */}
+  <a
+    href="https://www.youtube.com/@shreesaibiotech"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">yt</span>
+  </a>
+
+  {/* Pinterest */}
+  <a
+    href="https://in.pinterest.com/shreesaibiotech/?actingBusinessId=1108448664445334126"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">p</span>
+  </a>
+
+  {/* VK */}
+  <a
+    href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=rvv01w9"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">ig</span>
+  </a>
+</div>
+
           </div>
         </div>
       </div>
 
       {/* ✅ Navigation Bar */}
-      <div className="bg-nav-bg shadow-md py-2 px-4">
+      <div className="bg-nav-bg shadow-md py-2 ">
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img src={logo} alt="Shree Sai Biotech" className="h-16 w-auto" />
+            <img src={logo} alt="Shree Sai Biotech" className="h-16 object-contain w-auto" />
           
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-8 text-sm mx-1">
+          <nav className="hidden lg:flex items-center space-x-4 text-sm mx-1">
             <a href="/" className="text-primary font-medium hover:text-primary-dark transition-colors text-sm">{t("home")}</a>
             <NavigationDropdown title={t("about_us")} items={companyDropdownItems} route="/why-choose-us" />
             <NavigationDropdown title={t("products")}  navigateById={true} items={productsDropdownItems} route={"/products"} />

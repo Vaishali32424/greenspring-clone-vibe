@@ -42,27 +42,65 @@ export default function Footer() {
             <div className="flex space-x-3 mt-4 text-xl text-white">
               <div className="flex items-center space-x-4">
 
-                <div className="flex space-x-2">
-                  {/* Social Media Icons */}
-                  <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                    <span className="text-xs">f</span>
-                  </div>
-                  <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                    <span className="text-xs">x</span>
-                  </div>
-                  <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                    <span className="text-xs">in</span>
-                  </div>
-                  <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                    <span className="text-xs">yt</span>
-                  </div>
-                  <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                    <span className="text-xs">p</span>
-                  </div>
-                  <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">
-                    <span className="text-xs">vk</span>
-                  </div>
-                </div>
+                    <div className="flex space-x-2">
+  {/* Facebook */}
+  <a
+    href="https://www.facebook.com/profile.php?id=61550521295046"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">f</span>
+  </a>
+   <a
+    href="https://x.com/Sbiotech2?t=A9HPgMjIGBbTtZpNCy3e1w&s=09"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">x</span>
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/in/shree-sai-biotech-bb7305205?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">in</span>
+  </a>
+
+  {/* YouTube */}
+  <a
+    href="https://www.youtube.com/@shreesaibiotech"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">yt</span>
+  </a>
+
+  {/* Pinterest */}
+  <a
+    href="https://in.pinterest.com/shreesaibiotech/?actingBusinessId=1108448664445334126"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">p</span>
+  </a>
+
+  {/* VK */}
+  <a
+    href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=rvv01w9"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 bg-white/20 rounded flex items-center justify-center hover:bg-white/40 transition"
+  >
+    <span className="text-xs font-semibold">ig</span>
+  </a>
+</div>
               </div>
             </div>
           </div>

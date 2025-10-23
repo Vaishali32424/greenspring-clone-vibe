@@ -1,48 +1,57 @@
+
 const Certificates = () => {
- const certificates = [
-  { src: "/pdfs/BRC-Compliance.pdf", title: "BRC Compliance" },
-  { src: "/pdfs/certificate-of-trust.pdf", title: "Certificate of Trust" },
-  { src: "/pdfs/Food-Safety-System-Certification.pdf", title: "Food Safety System Certification" },
-  { src: "/pdfs/HALAL.pdf", title: "HALAL" },
-  { src: "/pdfs/importer-exporter.pdf", title: "Importer Exporter" },
-  { src: "/pdfs/KOSHER.pdf", title: "KOSHER" },
-  { src: "/pdfs/NON-GMO.pdf", title: "NON-GMO" },
+  const certificates = [
+    { img: "/assets/Certificates/BRC.jpeg", src: "/pdfs/BRC.pdf", title: "BRC" },
+    { img: "/assets/Certificates/BusinessTrust.jpeg", src: "/pdfs/IFS.pdf", title: "Business Trust" },
+    { img: "/assets/Certificates/ISO2015-2018.jpeg", src: "/pdfs/ISO2015-2018.pdf", title: "ISO:2015-2018" },
+    {img: "/assets/Certificates/Exporter.jpeg",  src: "/pdfs/Exporter.pdf", title: "Exporter" },
+    { img: "/assets/Certificates/FASSAI.jpeg", src: "/pdfs/FASSAI.pdf", title: "FASSAI" },
+        { img: "/assets/Certificates/FSSC-22000.jpeg", src: "/pdfs/FSSC-22000.pdf", title: "FSSC-22000" },
+        { img: "/assets/Certificates/WHO-GMP.jpeg", src: "/pdfs/WHO-GMP.pdf", title: "WHO-GMP" },
 
-    { src: "/pdfs/registration-certificate.pdf", title: "Registration Certificate" },
-  { src: "/pdfs/UDYAM-REGISTRATION-CERTIFICATE.pdf", title: "UDYAM Registration Certificate" },
-  { src: "/pdfs/WHO-GMP.pdf", title: "WHO GMP" },
+    { img: "/assets/Certificates/KOSHER.jpeg", src: "/pdfs/KOSHER.pdf", title: "KOSHER" },
+    { img: "/assets/Certificates/HALAL.jpeg", src: "/pdfs/HALAL.pdf", title: "HALAL" },
+        { img: "/assets/Certificates/ORGANIC.jpeg", src: "/pdfs/ORGANIC.pdf", title: "ORGANIC" },
+        { img: "/assets/Certificates/NON-GMO.jpeg", src: "/pdfs/NON-GMO.pdf", title: "NON-GMO" },
+                { img: "/assets/Certificates/HACCp.jpeg", src: "/pdfs/HACCp.pdf", title: "HACCP" },
+                                { img: "/assets/Certificates/URC.jpeg", src: "/pdfs/URC.pdf", title: "URC" },
 
-];
+
+
+  ];
+
   return (
     <section className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-teal-700 text-white text-center py-3 rounded-md font-bold">
+      <div className="max-w-8xl mx-auto">
+        <div className="bg-teal-700 text-white text-center py-3 rounded-md font-bold text-lg">
           CERTIFICATES
         </div>
 
-        <p className="text-center text-gray-700 max-w-4xl mx-auto mb-10">
-          The company always adheres to the corporate mission of creating
-          healthy life, strictly controls product quality and is certified with
-          ISO9001 quality management system certificate, Halal and Kosher
-          certificates. The company is continuously making innovations and
-          developments and has been issued with high-tech enterprise
-          certificates for many consecutive years.
+        <p className="text-center text-gray-700 max-w-4xl mx-auto mb-10 mt-5">
+          The company always adheres to the corporate mission of creating a healthy life, 
+          strictly controls product quality, and is certified with ISO9001, Halal, and Kosher certificates. 
+          We continuously make innovations and developments and have been recognized as a high-tech enterprise for many consecutive years.
         </p>
 
-        {/* Grid for certificates */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {/* Certificates Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 px-4">
           {certificates.map((cert, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              {/* PDF download link */}
-              <a
-                href={cert.src}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-200 w-full py-2 rounded-md shadow-md hover:bg-gray-300 transition duration-300"
-              >
-                {cert.title} 
-              </a>
-            </div>
+            <a
+              key={index}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center group transition-transform duration-300"
+            >
+              <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden shadow-md border border-gray-200 group-hover:shadow-lg group-hover:scale-[1.03] transition">
+                <img
+                  src={cert.img}
+                  alt={cert.title}
+                  loading="lazy"
+  className="object-cover filter blur-[2px] transition duration-300 "
+                />
+              </div>
+              <p className="mt-2 text-gray-800 bg-black/15 w-full text-center font-semibold text-sm">{cert.title}</p>
+            </a>
           ))}
         </div>
       </div>

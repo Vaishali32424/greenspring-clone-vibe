@@ -43,8 +43,8 @@ const CultureAndContact = ({ showCards = false,  }) => {
     },
     {
       icon: <Phone size={28} />,
-      title: "Contact directly",
-      desc: "Our Office Phone: +91-8989496905",
+      title: "Contact directly at our Office",
+      desc: "Mfg: Facilty Address : Plot No. 368-369 Dharmat Road,sanwer,Indore , 452001-madhya Pradesh, India",
     },
   ];
 

@@ -160,7 +160,7 @@ const ProductsPage = () => {
   }
 
   return (
-    <div className="container mx-auto p-4 lg:p-8">
+    <div className="container mx-auto p-4 lg:py-8">
       <div className="flex flex-col lg:flex-row gap-8">
         <aside className="w-full lg:w-1/4 lg:sticky lg:top-4 h-fit shadow-xl p-4">
           <h2 className="text-2xl font-bold mb-4">Categories</h2>

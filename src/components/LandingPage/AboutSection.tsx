@@ -12,8 +12,7 @@ export default function AboutSection() {
             <iframe
                 width="100%"
               height="350"
-              src="https://www.youtube.com/embed/uaCL8fBJdVs?si=f1ZZRJFpN2veavqT"
-              title="YouTube video player"
+              src="assets/shreesai.mp4"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               
                             className="w-full h-[350px]"
