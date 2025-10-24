@@ -1,10 +1,10 @@
 import React from "react";
 
 const statsData = [
-  { value: "25Y", label: "Industry Experience" },
-  { value: "2000+", label: "Product Variety" },
-  { value: "100+", label: "Country and Region" },
-  { value: "2450+", label: "Satisfied Clients" },
+  { value: "37Y", label: "Industry Experience" },
+  { value: "5000+", label: "Product Variety" },
+  { value: "90+", label: "Country and Region" },
+  { value: "1790+", label: "Satisfied Clients" },
 ];
 
 const CompanyIntro = () => {
@@ -16,24 +16,15 @@ const CompanyIntro = () => {
           {/* Left Content */}
           <div>
             <h2 className="text-xl font-bold text-gray-900 leading-snug">
-              <span className="text-primary text-[50px] pt-6">25</span > More Than 25 Years
+              <span className="text-primary text-[50px] pt-6">37+</span > More Than 37 Years
               Botanical Extract Supplier
             </h2>
 
             <p className="mt-4 text-gray-700 leading-relaxed text-justify">
               <span className="text-green-700 font-bold">
-                GREEN SPRING<sup>®</sup>
+Ayurvedic Herbal Powder Manufacturers  Botanical Extract 37 More Than 37 Years Botanical Extract Supplier<sup></sup>
               </span>{" "}
-              Xi'an Green Spring Technology Co., Ltd. was established in 2000,
-              We are an excellent supplier specializing in plant extracts for
-              23 years. For more than decade, we has been committing to the
-              innovation and development of modernization technology of
-              traditional Chinese medicine, as well as the research and
-              development and extraction of plant active ingredients. The
-              company's main products are saw palmetto extract, stevia, natural
-              ferulic acid, berberine HCL (berberine hydrochloride) and other
-              products, which are widely used in food, pharmaceuticals, health
-              supplements, cosmetics and other fields.
+           SHREE SAI ®Indore Shree sai biotech Technology . was established in 1988, We are an excellent supplier specializing in plant extracts for 37 years. For more than decade, we has been committing to the innovation and development of modernization technology of traditional India Ayurvedic Herbal Powder Manufacturers  medicine, as well as the research and development and extraction of plant active ingredients. The company's main products are saw palmetto extract, stevia, natural ferulic acid, berberine HCL (berberine hydrochloride) and other products, Which are widely used in food, pharmaceuticals, health supplements, cosmetics and other fields.
             </p>
           </div>
 

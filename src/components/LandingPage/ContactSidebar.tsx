@@ -58,7 +58,7 @@ const ContactSidebar = () => {
   text: `📞 You can contact us via the following methods:
 
 • Phone: +91-8989496905
-• Email: info@shreesaibiotech.in
+• Email: info@shreesaibiotech.com
 • WhatsApp: +91-8989496905
 • Address: 2nd Floor, Ms-A, Shop A 212, VIP Marg, Mall Godown Road, New Siyaganj, Indore - 452007, Madhya Pradesh, India
 
@@ -126,7 +126,7 @@ If you have any specific inquiries, feel free to reach out!`,
     return `📞 You can contact us via the following methods:
 
 • Phone: +91-8989496905
-• Email: info@shreesaibiotech.in
+• Email: info@shreesaibiotech.com
 • WhatsApp: +91-8989496905
 • Address: 2nd Floor, Ms-A, Shop A 212, VIP Marg, Mall Godown Road, New Siyaganj, Indore - 452007, Madhya Pradesh, India
 
@@ -136,7 +136,7 @@ If you have any specific inquiries, feel free to reach out!`;
   return "I'm here to help! Could you please rephrase that?";
 };
   const phoneNumber = "+918989496905";
-  const email = "info@shreesaibiotech.in";
+  const email = "info@shreesaibiotech.com";
   const address = "2nd Floor, Ms-A, Shop A 212, VIP Marg, Mall Godown Road, New Siyaganj, Indore - 452007, Madhya Pradesh, India";
 
   return (

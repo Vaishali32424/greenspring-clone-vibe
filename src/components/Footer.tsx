@@ -111,9 +111,9 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {[
                 ["Home", "/"],
-                ["Why Choose Us", "/about-us"],
+                ["About Us", "/about-us"],
                 ["Products", "/products"],
-                ["Sweeteners Customized Solutions", "/sweeteners"],
+                ["Enzymes", "/sweeteners"],
                 ["Product List", "/products"],
                 ["News", "/newslist-1"],
                 ["Knowledge", "/info/"],
@@ -165,8 +165,8 @@ export default function Footer() {
             </p>
             <p className="text-sm mb-4">
               <span className="font-semibold">Email:</span>{" "}
-              <a href="mailto:info@shreesaibiotech.in" className="text-white hover:underline">
-                info@shreesaibiotech.in
+              <a href="mailto:info@shreesaibiotech.com" className="text-white hover:underline">
+                info@shreesaibiotech.com
               </a>
             </p>
 
@@ -186,7 +186,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="mt-8 border-t pt-4 text-center text-sm text-white">
-          © {new Date().getFullYear()} Shree Sai Bio Technology. All Rights Reserved.
+          Copyright 1988 © SHREE SAI BIOTECH. All Rights Reserved.
         </div>
       </div>
 
@@ -202,7 +202,7 @@ export default function Footer() {
           <p>WhatsApp</p>
         </a>
         <a
-          href="https://teams.live.com/l/contact-sync/info@shreesaibiotech.in"
+          href="https://teams.live.com/l/contact-sync/info@shreesaibiotech.com"
           target="_blank"
           rel="nofollow noopener noreferrer"
           className="text-center text-xs"

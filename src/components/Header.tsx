@@ -204,7 +204,7 @@ const Header = () => {
             <a href="/" className="text-primary font-medium hover:text-primary-dark transition-colors text-sm">{t("home")}</a>
             <NavigationDropdown title={t("about_us")} items={companyDropdownItems} route="/why-choose-us" />
             <NavigationDropdown title={t("products")}  navigateById={true} items={productsDropdownItems} route={"/products"} />
-            <a href="/sweeteners" className="text-foreground text-sm hover:text-primary transition-colors">{t("Sweeteners Customized Solutions")}</a>
+            <a href="/sweeteners" className="text-foreground text-sm hover:text-primary transition-colors">{t("Enzymes")}</a>
             <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">{t("news")}</a>
             <a href="#" className="text-foreground text-sm hover:text-primary transition-colors">{t("knowledge")}</a>
             <a href="/contact-us" className="text-foreground text-sm hover:text-primary transition-colors">{t("contact_us")}</a>

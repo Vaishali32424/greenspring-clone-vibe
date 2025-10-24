@@ -32,7 +32,7 @@ const OurTeam = () => {
       <Header />
       <PageBanner
         title={"Meet Our Team"}
-        breadcrumb={"Why Choose Us / Meet Our Team"}
+        breadcrumb={"About Us / Meet Our Team"}
         backgroundImage="https://www.greenspringshop.com/uploads/202318070/ImgScroll/ba202302141100313844589.jpg?size=1920x300"
       />
     <section className="pb-12 bg-gray-50 ">

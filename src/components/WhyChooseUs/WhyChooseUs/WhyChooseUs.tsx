@@ -12,8 +12,8 @@ const WhyChooseUs = () => {
     <>
       <Header />
       <PageBanner
-        title={"Why Choose Us"}
-        breadcrumb={"Why Choose Us"}
+        title={"About Us"}
+        breadcrumb={"About Us"}
         backgroundImage="https://www.greenspringshop.com/uploads/202318070/ImgScroll/ba202311291047529283660.jpg?size=1280x281"
       />
     <section className="px-20 ">

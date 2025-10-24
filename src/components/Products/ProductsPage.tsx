@@ -25,6 +25,7 @@ const ProductsPage = () => {
   const [categories, setCategories] = useState<string[]>([]);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+const [showScrollButton, setShowScrollButton] = useState(false);
 
   const headerRef = useRef<HTMLElement | null>(null);
   const productRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
@@ -44,6 +45,25 @@ const ProductsPage = () => {
     setIsModalOpen(false);
     setSelectedProduct(null);
   };
+  useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
+      setShowScrollButton(true);
+    } else {
+      setShowScrollButton(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 
   const handleModalSubmit = (phoneNumber: string) => {
     if (selectedProduct) {
@@ -162,46 +182,45 @@ const ProductsPage = () => {
   return (
     <div className="container mx-auto p-4 lg:py-8">
       <div className="flex flex-col lg:flex-row gap-8">
-        <aside className="w-full lg:w-1/4 lg:sticky lg:top-4 h-fit shadow-xl p-4">
-          <h2 className="text-2xl font-bold mb-4">Categories</h2>
-          <ul className="space-y-2">
-            {categories.map((category) => (
-              <li key={category}>
+<aside className="w-full lg:w-1/4 h-fit lg:sticky lg:top-20 self-start bg-green-500 shadow-lg">
+  <h2 className="bg-[#7ea028] text-white text-lg font-semibold py-3 px-4 uppercase">
+    Our Products
+  </h2>
+  <ul className="flex flex-col">
+    {categories.map((category) => (
+      <li key={category} className="border-b border-[#90a52d]">
+        <button
+          onClick={() => handleCategoryToggle(category)}
+          className={`w-full text-left px-4 py-2 text-white text-sm font-medium hover:bg-[#f37021] transition-all duration-200 ${
+            openCategory === category ? "bg-[#f37021]" : "bg-[#a7bf3a]"
+          }`}
+        >
+          {category}
+        </button>
+
+        {openCategory === category && (
+          <ul className="bg-[#d9e89b] pl-6 py-2 space-y-1">
+            {productData[category].map((product) => (
+              <li key={product.id}>
                 <button
-                  onClick={() => handleCategoryToggle(category)}
-                  className="w-full text-left px-4 py-2 rounded-md transition-colors bg-gray-100 hover:bg-gray-200 flex justify-between items-center"
+                  onClick={() => handleProductClick(product.id)}
+                  className="w-full text-left px-2 py-1 text-[#333] text-sm hover:bg-[#f5f5f5] rounded-sm"
                 >
-                  <span>{category}</span>
-                  <span
-                    className={`transform transition-transform ${
-                      openCategory === category ? "rotate-180" : ""
-                    }`}
-                  >
-                    <ChevronDown className="w-4 h-4" />
-                  </span>
+                  {product.name && (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: product.name }}
+                    />
+                  )}
                 </button>
-                {openCategory === category && (
-                  <ul className="pl-4 mt-2 space-y-1">
-                    {productData[category].map((product) => (
-                      <li key={product.id}>
-                        <button
-                          onClick={() => handleProductClick(product.id)}
-                          className="w-full text-left px-2 py-1 rounded-md hover:bg-gray-200"
-                        >
-                          {product.name && (
-                            <div
-                              dangerouslySetInnerHTML={{ __html: product.name }}
-                            />
-                          )}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </li>
             ))}
           </ul>
-        </aside>
+        )}
+      </li>
+    ))}
+  </ul>
+</aside>
+
 
         <main className="w-full lg:w-3/4">
           {categories.map((category) => (
@@ -331,6 +350,16 @@ const ProductsPage = () => {
           productName={selectedProduct.name}
         />
       )}
+      {showScrollButton && (
+  <button
+    onClick={scrollToTop}
+    className="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-3 rounded-3xl shadow-lg transition-all duration-300"
+    aria-label="Scroll to top"
+  >
+    ↑
+  </button>
+)}
+
     </div>
   );
 };

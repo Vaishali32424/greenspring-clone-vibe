@@ -12,7 +12,7 @@ const WhatWeCanDo = () => {
       <Header />
       <PageBanner
         title={"What We Can Do"}
-        breadcrumb={"Why Choose Us / What We Can Do"}
+        breadcrumb={"About Us / What We Can Do"}
         backgroundImage="https://www.greenspringshop.com/uploads/202318070/ImgScroll/ba202302091333040720578.jpg?size=1920x300"
       />
     <section className="px-20 ">

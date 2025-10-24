@@ -29,7 +29,7 @@ const CultureAndContact = ({ showCards = false,  }) => {
     {
       icon: <Mail size={28} />,
       title: "Write to us",
-      desc: "Our email address: info@shreesaibiotech.in",
+      desc: "Our email address: info@shreesaibiotech.com",
     },
     {
       icon: <MapPin size={28} />,

@@ -11,7 +11,7 @@ const InovationNService = () => {
       <Header />
       <PageBanner
         title={"Inovation & Service"}
-        breadcrumb={"Why Choose Us / Inovation & Service"}
+        breadcrumb={"About Us / Inovation & Service"}
         backgroundImage="https://www.greenspringshop.com/uploads/202318070/ImgScroll/ba202302091333040720578.jpg?size=1920x300"
       />
     <section className="px-20 bg-gray-50">

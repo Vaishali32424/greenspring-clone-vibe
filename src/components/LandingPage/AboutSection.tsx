@@ -8,16 +8,7 @@ export default function AboutSection() {
         <div className="relative">
           {/* YouTube Video */}
           <div className="overflow-hidden shadow-md relative">
-        
-            <iframe
-                width="100%"
-              height="350"
-              src="assets/shreesai.mp4"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              
-                            className="w-full h-[350px]"
-
-            ></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QYVlrpmn-_4?si=RABjntomWQtIqis1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             {/* Top Right Square Box */}
             <div className="absolute -top-1  z-50 -right-1 w-10 h-10 p-1.5 bg-white rounded-md shadow-md">
               <div className="h-full w-full rounded-md  bg-green-700"></div>
@@ -27,7 +18,7 @@ export default function AboutSection() {
           {/* Years of Experience Badge */}
           <div className="absolute -bottom-6 -left-14 bg-[#F7F9FD] rounded-lg shadow p-6 text-center">
             <div className="p-3 bg-[#EBF0FB] rounded-lg">
-              <p className="text-3xl font-bold text-green-700">22</p>
+              <p className="text-3xl font-bold text-green-700">37</p>
               <p className="text-gray-600 text-sm">
                 Years of <br /> Experience
               </p>
@@ -52,7 +43,7 @@ Shree sai Biotech® offer a range of botanical extract products with
               "Natural raw material Manufacturer",
               "Strict quality assurance",
               "Professional Natural Botanical Extracts ",
-              "Over 25 years of export experience",
+              "Over 37 years of export experience",
               "OEM and ODM service",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
