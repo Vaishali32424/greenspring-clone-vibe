@@ -38,8 +38,8 @@ const CultureAndContact = ({ showCards = false,  }) => {
     },
     {
       icon: <MessageCircle size={28} />,
-      title: "Whatsapp",
-      desc: "Our Whatsapp Number: +91-8989496905",
+      title: "Whatsapp & Telephone",
+      desc: "Whatsapp : +91-8989496905  & Telephone: 0731-4022477",
     },
     {
       icon: <Phone size={28} />,

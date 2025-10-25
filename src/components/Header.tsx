@@ -1,4 +1,4 @@
-import { Phone, Mail, ChevronDown, Menu, X } from "lucide-react";
+import { Phone, Mail, ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "./ui/button";
 import logo from "/assets/big-logo.jpeg";
 import { useTranslation } from "react-i18next";
@@ -11,7 +11,8 @@ import {
 import NavigationDropdown from "./LandingPage/NavigationDropdown";
 import ReactCountryFlag from "react-country-flag";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Tooltip } from "./ui/tooltip";
 
 const languages = [
   { code: "en", name: "English", countryCode: "GB" },
@@ -195,7 +196,7 @@ const Header = () => {
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img src={logo} alt="Shree Sai Biotech" className="h-16 object-contain w-auto" />
+            <img src={logo} alt="Shree Sai Biotech" className="h-12 py-2 object-contain w-auto" />
           
           </div>
 
@@ -210,12 +211,21 @@ const Header = () => {
             <a href="/contact-us" className="text-foreground text-sm hover:text-primary transition-colors">{t("contact_us")}</a>
           </nav>
 
-          {/* Desktop Feedback Button */}
           <div className="hidden lg:block">
-            <Button       onClick={() => navigate("/contact-us")}
-className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md font-medium">
-              {t("feedback")}
-            </Button>
+          <div className="flex items-center gap-4">
+  <Button
+    onClick={() => navigate("/contact-us")}
+    className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md font-medium"
+  >
+    {t("feedback")}
+  </Button>
+<Tooltip content={t("search product")}>
+    <Link to="/product-search">
+
+  <Search  className="cursor-pointer"/>
+  </Link></Tooltip>
+</div>
+
           </div>
 
           {/* ✅ Mobile Hamburger + Language Switcher */}

@@ -1,9 +1,14 @@
-import { Globe, ChevronDown } from "lucide-react";
+import { Globe, ChevronDown, Locate, Mail, MessageCircle, ArrowUp } from "lucide-react";
 import React from "react";
 import ContactSidebar from "./LandingPage/ContactSidebar";
 import logo from "/assets/logo.jpeg";
 import QRCode from "/assets/QR-code.png";
+import { FaWhatsapp } from "react-icons/fa";
 export default function Footer() {
+  const phoneNumber = "+918989496905";
+const email = "info@shreesaibiotech.com";
+const address =
+  "2nd Floor, Ms-A, Shop A 212, VIP Marg, Mall Godown Road, New Siyaganj, Indore - 452007, Madhya Pradesh, India";
   return (
     <><footer className="bg-gray-100 text-gray-700">
       {/* Top CTA Section */}
@@ -33,7 +38,7 @@ export default function Footer() {
                 className="mb-4 w-32" />
             </a>
             <p className="text-sm">
-              We have more than 2,000 kinds of products, and not all of them
+              We have more than 5,000 kinds of products, and not all of them
               are listed on our website. Please contact us if you cannot find
               it on our site.
             </p>
@@ -191,51 +196,56 @@ export default function Footer() {
       </div>
 
       {/* Mobile Buttons */}
-      <div className="md:hidden fixed bottom-0 left-0 w-full bg-white shadow-inner flex justify-around py-2 z-50">
-        <a
-          href="https://api.whatsapp.com/send?l=en&phone=8618182698650"
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-          className="text-center text-xs"
-        >
-          <i className="iconfont icon-whatsapp1 text-xl" />
-          <p>WhatsApp</p>
-        </a>
-        <a
-          href="https://teams.live.com/l/contact-sync/info@shreesaibiotech.com"
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-          className="text-center text-xs"
-        >
-          <i className="iconfont icon-teams text-xl" />
-          <p>Teams</p>
-        </a>
-        <button
+     <div className="md:hidden fixed bottom-0 left-0 w-full bg-white shadow-inner flex justify-around py-2 z-50 border-t border-gray-200">
+      {/* WhatsApp */}
+      <button
+        onClick={() =>
+          window.open(`https://wa.me/${phoneNumber.replace(/\D/g, "")}`, "_blank")
+        }
+        className="flex flex-col items-center text-xs text-gray-700 hover:text-green-600"
+      >
+        <FaWhatsapp className="text-2xl text-green-600" />
+        <p>WhatsApp</p>
+      </button>
+
+      {/* Email */}
+      <button
+        onClick={() => (window.location.href = `mailto:${email}`)}
+        className="flex flex-col items-center text-xs text-gray-700 hover:text-blue-600"
+      >
+        <Mail className="text-2xl text-blue-600" />
+        <p>Email</p>
+      </button>
+ <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-center text-xs"
         >
-          <i className="iconfont icon-xiangshang1 text-xl" />
+        <ArrowUp className="text-2xl text-green-700" />
           <p>Top</p>
         </button>
-        <a href="vk://vk.com/greenspring3578" rel="nofollow" className="text-center text-xs">
-          <i className="iconfont icon-vkontakte1 text-xl" />
-          <p>VK</p>
-        </a>
-        <a
-          href="https://www.greenspringshop.com/inquiry"
-          className="text-center text-xs"
-        >
-          <i className="iconfont icon-message text-xl" />
-          <p>Inquiry</p>
-        </a>
-        <div className="text-center text-xs relative">
-          <i className="iconfont icon-cart text-xl" />
-          <p>Bag</p>
-          <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">
-            0
-          </span>
-        </div>
-      </div>
+      {/* Message */}
+      <button
+        onClick={() => (window.location.href = `sms:${phoneNumber}`)}
+        className="flex flex-col items-center text-xs text-gray-700 hover:text-green-700"
+      >
+        <MessageCircle className="text-2xl text-green-700" />
+        <p>Message</p>
+      </button>
+
+      {/* Location */}
+      <button
+        onClick={() =>
+          window.open(
+            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`,
+            "_blank"
+          )
+        }
+        className="flex flex-col items-center text-xs text-gray-700 hover:text-blue-700"
+      >
+        <Locate className="text-2xl text-blue-700" />
+        <p>Location</p>
+      </button>
+    </div>
     </footer><ContactSidebar /></>
 
   );

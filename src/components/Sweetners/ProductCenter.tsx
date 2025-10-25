@@ -19,16 +19,14 @@ const products: Product[] = [
   },
   {
     name: "Erythritol Powder",
-    description:
-      "ASSAY: ≥99.0%. Appearance: white crystalline powder.",
+    description: "ASSAY: ≥99.0%. Appearance: white crystalline powder.",
     image: "/images/erythritol.png",
     label: "Erythritol",
     readMoreLink: "#",
   },
   {
     name: "D-Allose Powder",
-    description:
-      "ASSAY: ≥99.0%. Appearance: white crystalline powder.",
+    description: "ASSAY: ≥99.0%. Appearance: white crystalline powder.",
     image: "/images/d-allose.png",
     label: "D-Allose",
     readMoreLink: "#",
@@ -50,28 +48,32 @@ const products: Product[] = [
   },
   {
     name: "D-Tagatose Powder",
-    description: "Assay (HPLC) ≥ 99.0%. Appearance: White or almost white crystalline",
+    description:
+      "Assay (HPLC) ≥ 99.0%. Appearance: White or almost white crystalline",
     image: "/images/d-tagatose.png",
     label: "D-TAGATOSE POWDER",
     readMoreLink: "#",
   },
   {
     name: "Inulin Powder",
-    description: "Specification: 90% inulin. Appearance: White to yellowish powder",
+    description:
+      "Specification: 90% inulin. Appearance: White to yellowish powder",
     image: "/images/inulin.png",
     label: "Inulin Powder",
     readMoreLink: "#",
   },
   {
     name: "L-Arabinose Powder",
-    description: "Active substance content: 99%. Appearance: White or almost white crystalline",
+    description:
+      "Active substance content: 99%. Appearance: White or almost white crystalline",
     image: "/images/l-arabinose.png",
     label: "L-ARABINOSE POWDER",
     readMoreLink: "#",
   },
   {
     name: "Stevia Glycosides Rebaudioside D",
-    description: "Specification: Rebaudioside D 95%. Appearance: fine white powder",
+    description:
+      "Specification: Rebaudioside D 95%. Appearance: fine white powder",
     image: "/images/reb-d.png",
     label: "Rebaudioside D",
     readMoreLink: "#",
@@ -85,14 +87,16 @@ const products: Product[] = [
   },
   {
     name: "Stevia Glycosides Rebaudioside A",
-    description: "Specification: Rebaudioside A 20%-90%. Appearance: fine white powder",
+    description:
+      "Specification: Rebaudioside A 20%-90%. Appearance: fine white powder",
     image: "/images/reb-a.png",
     label: "Rebaudioside A",
     readMoreLink: "#",
   },
   {
     name: "Stevia Glycosides Rebaudioside M",
-    description: "Specification: Rebaudioside M 95%. Appearance: fine white powder",
+    description:
+      "Specification: Rebaudioside M 95%. Appearance: fine white powder",
     image: "/images/reb-m.png",
     label: "Rebaudioside M",
     readMoreLink: "#",
@@ -105,28 +109,46 @@ const ProductCenter: React.FC = () => {
       {/* Contact Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
         <div className="bg-white p-6 shadow border text-sm">
-          <h3 className="text-lg font-semibold mb-2">Interested in Sweetener?</h3>
+          <h3 className="text-lg font-semibold mb-2">
+            Interested in Sweetener?
+          </h3>
           <p className="mb-4">
-            Shree Sai Biotech® has over 23 years of partner relationships, industry
-            expertise, innovation and service that everyone at Shree Sai Biotech® brings
-            to our customers each and every day. Contact us for your nutraceutical
-            and pharmaceutical solutions:
+            Shree Sai Biotech® has over 23 years of partner relationships,
+            industry expertise, innovation and service that everyone at Shree
+            Sai Biotech® brings to our customers each and every day. Contact us
+            for your nutraceutical and pharmaceutical solutions:
           </p>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <strong>Our Address</strong><br />
-              Room 604, Suit A, National Digital Publishing House Base, Tiangu 7th
-              Road, High-tech development Zone, Xi’an China.
-            </li>
-            <li>
-              <strong>Whatsapp</strong><br />
-              (+86)-181 8269 8650
-            </li>
-            <li>
-              <strong>E-Mail</strong><br />
-              sale@greenspringbio.com
-            </li>
-          </ul>
+       <ul className="space-y-2 text-sm">
+  <li>
+    <strong>Our Address</strong>
+    <br />
+    2nd Floor, Ms-A, Shop A 212, VIP Marg, Mall Godown Road, New Siyaganj,
+    Indore - 452007, Madhya Pradesh, India
+  </li>
+  <li>
+    <strong>Whatsapp</strong>
+    <br />
+    <a
+      href="https://wa.me/918989496905"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-primary hover:underline"
+    >
+      +91-8989496905
+    </a>
+  </li>
+  <li>
+    <strong>E-Mail</strong>
+    <br />
+    <a
+      href="mailto:info@shreesaibiotech.com"
+      className="text-primary hover:underline"
+    >
+      info@shreesaibiotech.com
+    </a>
+  </li>
+</ul>
+
         </div>
         <img
           src="/assets/steviaplant.webp"
@@ -163,7 +185,6 @@ const ProductCenter: React.FC = () => {
             <div className="p-4 text-sm text-gray-800">
               <h4 className="font-semibold mb-1">{product.name}</h4>
               <p className="my-2">{product.description}</p>
-            
             </div>
           </div>
         ))}

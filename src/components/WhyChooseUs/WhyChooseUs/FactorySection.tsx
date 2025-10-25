@@ -1,16 +1,16 @@
 const FactorySection = () => {
   const items = [
     {
-      img: "https://www.greenspringshop.com/Content/uploads/2023389378/2023112910132700c3de496fff44debe82fcb60ebde3fb.jpg?size=700x0", // apna image path yaha
+      img: "/assets/laboratory.jpeg", // apna image path yaha
       title: "R&D Laboratory",
     },
     {
-      img: "https://www.greenspringshop.com/Content/uploads/2023389378/20231129101053308960bec7984b48a6a3fa2d6051963f.jpg?size=700x0",
+      img: "/assets/factory.jpeg",
       title: "Our Factory",
     },
     {
-      img: "https://www.greenspringshop.com/Content/uploads/2023389378/20231129101159f76d604b497449e8b50ba4cddf504eb2.jpg?size=700x0",
-      title: "Office Address",
+      img: "/assets/shreesaioffice.jpeg",
+      title: "Our Office ",
     },
   ];
 

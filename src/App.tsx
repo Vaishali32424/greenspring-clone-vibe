@@ -14,6 +14,7 @@ import WhatWeCanDo from "./components/WhyChooseUs/WhatCanWeDo/WhatWeCanDo";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Products from "./components/Products/Products";
 import Sweetners from "./components/Sweetners/Sweetners";
+import ProductSearch from "./components/LandingPage/ProductSearch";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
                     <Route path="/contact-us" element={<ContactUs />} />
                     <Route path="/products" element={<Products />} />
                     <Route path="/sweeteners" element={<Sweetners />} />
+                    <Route path="/product-search" element={<ProductSearch />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
