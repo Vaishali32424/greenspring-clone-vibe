@@ -15,6 +15,10 @@ const Certificates = () => {
         { img: "/assets/Certificates/NON-GMO.jpeg", src: "/pdfs/NON-GMO.pdf", title: "NON-GMO" },
                 { img: "/assets/Certificates/HACCp.jpeg", src: "/pdfs/HACCp.pdf", title: "HACCP" },
                                 { img: "/assets/Certificates/URC.jpeg", src: "/pdfs/URC.pdf", title: "URC" },
+                                { img: "/assets/Certificates/URC.jpeg", src: "/pdfs/URC.pdf", title: "URC" },
+                                { img: "/assets/Certificates/LD GoMP.jpeg", src: "/pdfs/LD GoMP.pdf", title: "LD GoMP" },
+                                                                { img: "/assets/Certificates/E N P T.jpeg", src: "/pdfs/E N P T.pdf", title: "E N P T" },
+
 
 
 

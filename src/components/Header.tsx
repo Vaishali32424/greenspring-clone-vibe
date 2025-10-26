@@ -44,10 +44,7 @@ const Header = () => {
         const categories = Object.keys(data);
         const dropdownItems = categories.map((category) => ({
           label: category,
-          href: `/products#${category
-            .toLowerCase()
-            .replace(/ & /g, "-")
-            .replace(/ /g, "-")}`,
+          href: `/products/category/${category}`,
         }));
         setProductsDropdownItems(dropdownItems);
       } catch (error) {

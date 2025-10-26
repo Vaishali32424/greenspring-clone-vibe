@@ -15,6 +15,8 @@ import ContactUs from "./components/ContactUs/ContactUs";
 import Products from "./components/Products/Products";
 import Sweetners from "./components/Sweetners/Sweetners";
 import ProductSearch from "./components/LandingPage/ProductSearch";
+import ProductsDetailsPage from "./components/Products/ProductDetail";
+import ProductsPage from "./components/Products/ProductsPage";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,8 @@ const App = () => (
                     <Route path="/products" element={<Products />} />
                     <Route path="/sweeteners" element={<Sweetners />} />
                     <Route path="/product-search" element={<ProductSearch />} />
+        {/* <Route path="/products/:id" element={<ProductsDetailsPage />} /> */}
+            <Route path="/products/*" element={<ProductsPage />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

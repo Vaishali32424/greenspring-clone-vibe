@@ -77,3 +77,21 @@
 .tble1 td {
   padding: 0.1rem 0rem;
 }
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #d1fae5; /* light green */
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #16a34a; /* dark green */
+  border-radius: 10px;
+  border: 2px solid #d1fae5;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #15803d;
+}

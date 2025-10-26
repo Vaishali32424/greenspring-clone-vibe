@@ -1,6 +1,8 @@
 import { FaCheckCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutSection() {
+    const navigate = useNavigate();
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 items-center">
@@ -54,9 +56,12 @@ Shree sai Biotech® offer a range of botanical extract products with
           </div>
 
           {/* Button */}
-          <button className="bg-green-700 text-white font-medium px-6 py-2 rounded-md shadow hover:bg-green-800 transition">
-            Read more
-          </button>
+         <button
+      onClick={() => navigate("/why-choose-us")}
+      className="bg-green-700 text-white font-medium px-6 py-2 rounded-md shadow hover:bg-green-800 transition"
+    >
+      Read more
+    </button>
         </div>
       </div>
     </section>
