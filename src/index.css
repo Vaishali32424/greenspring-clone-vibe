@@ -95,3 +95,38 @@
 .sidebar::-webkit-scrollbar-thumb:hover {
   background-color: #15803d;
 }
+.prose table {
+    /* टेबल की चौड़ाई को पूरे कंटेनर में फैलने दें */
+    width: 100%;
+    /* बॉर्डर को एक ही लाइन में कोलैप्स करें */
+    border-collapse: collapse;
+    /* बाहरी बॉर्डर हटाएँ */
+    border: none;
+    font-size: 0.9rem; /* फ़ॉन्ट साइज़ को थोड़ा छोटा करें */
+}
+
+.prose th,
+.prose td {
+    padding: 4px 4px; 
+    border: 1px solid #e5e7eb; /* tailwind's gray-200 */
+    text-align: left;
+    vertical-align: top;
+}
+
+.prose th {
+    background-color: #f3f4f6; /* tailwind's gray-100 */
+    color: #1f2937; /* tailwind's gray-800 */
+    font-weight: 600; /* सेमी-बोल्ड */
+}
+
+.prose tbody tr:nth-child(even) {
+    background-color: #fafafa; /* बहुत हल्का ग्रे */
+}
+
+/* टेबल कैप्शन को अगर स्टाइल करना हो */
+.prose caption {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4b5563;
+}

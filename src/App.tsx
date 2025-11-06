@@ -17,6 +17,10 @@ import Sweetners from "./components/Sweetners/Sweetners";
 import ProductSearch from "./components/LandingPage/ProductSearch";
 import ProductsDetailsPage from "./components/Products/ProductDetail";
 import ProductsPage from "./components/Products/ProductsPage";
+import CreateProduct from "./components/CreateProduct/CreateProduct";
+import ProductDisplay from "./components/ViewProduct.tsx/ProductDisplay";
+import PayloadPreview from "./components/ViewProduct.tsx/PayloadPreview";
+import ProductForm from "./components/CreateProduct/ProductForm";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +48,8 @@ const App = () => (
                     <Route path="/product-search" element={<ProductSearch />} />
         {/* <Route path="/products/:id" element={<ProductsDetailsPage />} /> */}
             <Route path="/products/*" element={<ProductsPage />} />
+            <Route path="/add-product" element={<ProductForm />} />
+            <Route path="/view-product" element={<PayloadPreview />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
